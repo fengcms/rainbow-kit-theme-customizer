@@ -13,6 +13,7 @@ const queryClient = new QueryClient()
 
 const DappProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const { currLanguageCode } = useLanguage()
+  console.log(JSON.stringify(darkTheme(), null, 2))
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>

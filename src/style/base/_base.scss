@@ -2,10 +2,6 @@
 html {
   background-color: $white;
   color: $black;
-  &.dark {
-    // background: $c22;
-    // color: $cff;
-  }
 }
 body {
   line-height: 1;
@@ -67,9 +63,8 @@ body {
   margin-left: auto;
   margin-right: auto;
   &_ {
+    width: 100%;
     min-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 // 滚动条

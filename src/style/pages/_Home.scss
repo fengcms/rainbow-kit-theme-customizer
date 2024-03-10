@@ -1,0 +1,20 @@
+#root > [data-rk] {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.p-home {
+  @extend .web_;
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  &-iframe {
+    border: none;
+    border-left: 1px solid $line;
+    width: 800px;
+  }
+}
