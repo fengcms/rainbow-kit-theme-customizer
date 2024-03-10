@@ -2,15 +2,14 @@ import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import ALink from '@@/core/ALink'
-import ConnectButton from '@@/core/Wallet/ConnectButton'
 import SelectLanguage from '@@/web/Header/SelectLanguage'
 
-const Header: FC = () => {
+const PageHeader: FC = () => {
   const { t } = useTranslation()
   return (
-    <div className="c-header">
-      <h1>Logo</h1>
-      <nav>
+    <header className="c-header">
+      <h1 className="c-header-logo">A Theme Customizer for RainbowKit</h1>
+      <nav className="c-header-nav">
         <ul>
           <li>
             <ALink to="/">{t('Header.Nav.Home')}</ALink>
@@ -24,9 +23,8 @@ const Header: FC = () => {
         </ul>
       </nav>
       <SelectLanguage />
-      <ConnectButton />
-    </div>
+    </header>
   )
 }
 
-export default Header
+export default PageHeader

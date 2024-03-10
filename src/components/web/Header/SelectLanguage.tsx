@@ -1,4 +1,6 @@
-import { ChangeEvent, FC } from 'react'
+import { FC } from 'react'
+
+import { Select } from 'antd'
 
 import { useLanguage } from '@/hooks/useLanguage'
 import { languages } from '@/i18n'
@@ -6,17 +8,15 @@ import { LanguageCodeTypes } from '@/types/i18n'
 
 const SelectLanguage: FC = () => {
   const { currLanguageCode, changeLanguage } = useLanguage()
-  const onChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    changeLanguage(e.target.value as LanguageCodeTypes)
-  }
   return (
-    <select defaultValue={currLanguageCode} onChange={onChange}>
-      {languages.map((item) => (
-        <option key={item.code} value={item.code}>
-          {item.name}
-        </option>
-      ))}
-    </select>
+    <>
+      <Select
+        style={{ width: 100 }}
+        defaultValue={currLanguageCode}
+        onChange={(value) => changeLanguage(value as LanguageCodeTypes)}
+        options={languages.map(({ code, name }) => ({ label: name, value: code }))}
+      />
+    </>
   )
 }
 export default SelectLanguage

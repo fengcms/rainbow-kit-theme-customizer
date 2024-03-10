@@ -1,0 +1,32 @@
+.c-header {
+  @extend .web_;
+  height: 80px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $line;
+
+  &-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    &::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 40px;
+      background: url('https://www.rainbowkit.com/rainbow.svg') center/contain no-repeat;
+      border-radius: 8px;
+    }
+  }
+
+  &-nav {
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+}
